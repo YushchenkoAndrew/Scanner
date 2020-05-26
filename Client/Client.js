@@ -18,5 +18,20 @@ client.connect(PORT, HOST, function () {
 client.on("data", function (data) {
   console.log(`Server:\t${data}`);
   client.write(data); // Client as Echo Server
-  if (data == "Close") client.destroy();
 });
+
+function sendRequest(data) {
+  let response;
+  client.write(data);
+  client.on("data", function (data) {
+    response = data;
+  });
+  return response;
+}
+
+function closeConn() {
+  client.write("Close Connection");
+  client.destroy();
+}
+
+module.exports = { sendRequest, closeConn };

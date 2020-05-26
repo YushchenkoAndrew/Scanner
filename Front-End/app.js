@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs").promises;
+const client = require("../Client/Client");
 
 const host = "127.0.0.1";
 const port = 8000;
@@ -30,6 +31,10 @@ fs.readFile(__dirname + "/index.html")
     console.error(`Could not read index.html file: ${err}`);
     process.exit(1);
   });
+
+function clickButt() {
+  console.log("Click butt.....buuuuttttt!!!!");
+}
 
 // create server and make use of our request listener
 const server = http.createServer(requestListener);

@@ -51,11 +51,17 @@ const requestListener = function (req, res) {
   }
 };
 
+// fs module contains a readFile() function that we’ll use to load the HTML file in place
+// The special variable __dirname has the absolute path of where the Node.js code is being run
 fs.readFile(__dirname + "/index.html")
   .then((contents) => {
     indexFile = contents;
   })
   .catch((err) => {
+    // Our error handler has changed as well. If the file can’t be loaded,
+    // we capture the error and print it to our console. We then exit the Node.js
+    // program with the exit() function without starting the server. This way we can see
+    // why the file reading failed, address the problem, and then start the server again.
     console.error(`Could not read index.html file: ${err}`);
     process.exit(1);
   });

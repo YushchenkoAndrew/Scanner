@@ -1,5 +1,5 @@
 * Scanner
- A simple project need for scanning file from server and send image to client.
+ A simple project created for scanning file. Help you to use your old scanner in your local network.
 
 ** Requirements
 - ~node~

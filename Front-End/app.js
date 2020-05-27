@@ -5,16 +5,28 @@ const PORT = 13327;
 
 // require("../Client/Client");
 
-var socket = new WebSocket("ws://" + HOST + ":" + PORT);
+var ws = new WebSocket("ws://" + HOST + ":" + PORT);
+
+ws.onopen = function () {
+  console.log(`Connected to Server ${HOST}:${PORT}`);
+};
 
 function clickButt() {
-  socket.send("cpp");
+  ws.send("Scan");
+  document.getElementById("image").src =
+    "https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif";
 
   console.log("Click butt.....buuuuttttt!!!!");
   console.log(HOST + ":" + PORT);
 }
 
-socket.onmessage = function (event) {
-  console.log(event);
-  console.log(event.data);
+ws.onmessage = function (event) {
+  console.log("Server:\t" + event.data);
+
+  document.getElementById("image").src = "data:image/jpeg;base64," + event.data;
+};
+
+ws.onerror = function (error) {
+  console.log("Error");
+  ws = new WebSocket("ws://" + HOST + ":" + PORT);
 };

@@ -1,5 +1,41 @@
 * Scanner
 A simple project need for scanning file from server and send image to client.
 
+**Requirements
+- ~node~
+- ~Python >= 3.5~
+
 ** Installation
-The project consists of two independent parts: client and server.
+For using this project you need:
+#+begin_src emacs-lisp
+npm install http-server -g 
+pip install websocket-server
+pip install python-sane
+#+end_src
+
+
+** Changing
+Change HOST value in file app.js to your local ip address:
+#+begin_src emacs-lisp
+cd Scanner/Front-End
+vi app.js
+#+end_src
+
+Change HOST value in file ServerWebSocket.py.js to your local ip address:
+#+begin_src emacs-lisp
+cd ../Server
+vi ServerWebSocket.py
+#+end_src
+
+You can your local ip running command:
+#+begin_src emacs-lisp
+ifconfig
+#+end_src
+
+** Start Server
+#+begin_src emacs-lisp
+python3 ServerWebSocket.py &
+cd ../Front-End
+http-server -c 10 -p 8000
+#+end_src
+You can check running website just going on the page: http://127.0.0.1:8080

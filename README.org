@@ -2,6 +2,7 @@
 A simple project need for scanning file from server and send image to client.
 
 **Requirements
+
 - ~node~
 - ~Python >= 3.5~
 
@@ -38,4 +39,4 @@ python3 ServerWebSocket.py &
 cd ../Front-End
 http-server -c 10 -p 8000
 #+end_src
-You can check running website just going on the page: http://127.0.0.1:8080
+You can check running website just going on the page: http://127.0.0.1:8000

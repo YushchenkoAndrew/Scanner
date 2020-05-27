@@ -1,0 +1,5 @@
+* Scanner
+A simple project need for scanning file from server and send image to client.
+
+** Installation
+The project consists of two independent parts: client and server.

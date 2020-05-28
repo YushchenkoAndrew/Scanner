@@ -29,9 +29,9 @@ cd ../Server
 vi ServerWebSocket.py
 #+end_src
 
-You can your local ip running command:
+You can find your local ip running command:
 #+begin_src emacs-lisp
-ifconfig
+hostname -I | awk '{print $2}'
 #+end_src
 
 ** Start Server

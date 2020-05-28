@@ -7,6 +7,8 @@ from PIL import Image
 HOST = '192.168.0.103'
 PORT = 13327
 
+FILE_NAME = "Test.bmp"
+
 def scanDoc():
 	var = sane.init()
 
@@ -19,7 +21,7 @@ def scanDoc():
 	# Start a scan and get and PIL.Image object
 	dev.start()
 	im = dev.snap()
-	im.save("Test.png")
+	im.save(FILE_NAME)
 	dev.close()
 
 def new_client(client, server):
@@ -31,9 +33,9 @@ def message_received( client, server, message):
 	if (message == 'Scan'):
 		print("Ok!!")
 
-		#scanDoc()
+		scanDoc()
 
-		with open('/home/pi/Test2.bmp', 'rb') as file:
+		with open(FILE_NAME, 'rb') as file:
 			img = file.read()
 		data = base64.encodebytes(img).decode("utf-8")
 

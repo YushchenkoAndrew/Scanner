@@ -10,7 +10,7 @@ For using this project you need:
 #+begin_src emacs-lisp
 git clone https://github.com/YushchenkoAndrew/Scanner.git
 cd Scanner
-npm install http-server -g 
+npm install http-server -g
 pip install websocket-server
 pip install python-sane
 #+end_src
@@ -34,7 +34,7 @@ You can find your local ip running command:
 hostname -I | awk '{print $2}'
 #+end_src
 
-** Start Server
+** Start Client/Server
 #+begin_src emacs-lisp
 python3 ServerWebSocket.py &
 cd ../Front-End

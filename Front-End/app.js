@@ -1,4 +1,4 @@
-const HOST = "192.168.0.103";
+const HOST = "192.168.1.15";
 const PORT = 13327;
 
 // Run a basic website design from html file

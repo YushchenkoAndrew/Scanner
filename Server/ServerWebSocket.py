@@ -4,7 +4,7 @@ import base64
 import sane
 from PIL import Image
 
-HOST = '192.168.0.103'
+HOST = '192.168.1.15'
 PORT = 13327
 
 FILE_NAME = "Test.bmp"
@@ -12,8 +12,8 @@ FILE_NAME = "Test.bmp"
 def scanDoc():
 	var = sane.init()
 
-	devices = var.get_devices()
-	print("Devices: " + devices)
+	devices = sane.get_devices()
+	print("Devices: ", devices)
 
 	# Open first device
 	dev = sane.open(devices[0][0])
